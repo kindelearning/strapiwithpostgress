@@ -1,0 +1,93 @@
+{
+    "kind": "collectionType",
+    "collectionName": "milestones",
+    "info": {
+        "singularName": "milestone",
+        "pluralName": "milestones",
+        "displayName": "Milestone",
+        "description": ""
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {
+        "i18n": {
+            "localized": true
+        }
+    },
+    "attributes": {
+        "Title": {
+            "pluginOptions": {
+                "i18n": {
+                    "localized": true
+                }
+            },
+            "type": "string",
+            "default": "Title"
+        },
+        "Thumbnail": {
+            "type": "media",
+            "multiple": false,
+            "required": false,
+            "allowedTypes": [
+                "images",
+                "files",
+                "videos",
+                "audios"
+            ],
+            "pluginOptions": {
+                "i18n": {
+                    "localized": true
+                }
+            }
+        },
+        "Category": {
+            "pluginOptions": {
+                "i18n": {
+                    "localized": true
+                }
+            },
+            "type": "string",
+            "default": "Category"
+        },
+        "SubCategory": {
+            "pluginOptions": {
+                "i18n": {
+                    "localized": true
+                }
+            },
+            "type": "string",
+            "default": "SubCategory"
+        },
+        "Description": {
+            "pluginOptions": {
+                "i18n": {
+                    "localized": true
+                }
+            },
+            "type": "richtext",
+            "default": "Description"
+        },
+        "kid": {
+            "type": "relation",
+            "relation": "manyToMany",
+            "target": "api::kid.kid",
+            "inversedBy": "myMilestones"
+        },
+        "users": {
+            "type": "relation",
+            "relation": "manyToMany",
+            "target": "plugin::users-permissions.user",
+            "inversedBy": "allMilestones"
+        },
+        "additionalField": {
+            "pluginOptions": {
+                "i18n": {
+                    "localized": true
+                }
+            },
+            "type": "richtext",
+            "default": "additionalField"
+        }
+    }
+}

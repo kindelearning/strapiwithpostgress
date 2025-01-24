@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_global_age_group_sections",
+  "info": {
+    "displayName": "AgeGroupSection",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "featuredText": {
+      "type": "string",
+      "default": "featuredText"
+    },
+    "Title": {
+      "type": "string",
+      "default": "Title"
+    },
+    "Body": {
+      "type": "richtext",
+      "default": "Body"
+    },
+    "Content": {
+      "type": "component",
+      "repeatable": true,
+      "component": "global.age-card"
+    },
+    "additionalField": {
+      "type": "richtext",
+      "default": "additionalField"
+    }
+  }
+}

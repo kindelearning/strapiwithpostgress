@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_global_basic_kindi_sections",
+  "info": {
+    "displayName": "Basic Kindi Section",
+    "icon": "bold",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "featuredText": {
+      "type": "string",
+      "default": "featuredText"
+    },
+    "title": {
+      "type": "string",
+      "default": "title"
+    },
+    "Media": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "BodyDescription": {
+      "type": "richtext",
+      "default": "Educational play activities, ensuring children learn and develop consistently."
+    },
+    "additionalField": {
+      "type": "richtext",
+      "default": "additionalField"
+    }
+  }
+}

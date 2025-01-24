@@ -1,0 +1,120 @@
+{
+    "kind": "collectionType",
+    "collectionName": "kids",
+    "info": {
+        "singularName": "kid",
+        "pluralName": "kids",
+        "displayName": "Kid",
+        "description": ""
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {
+        "i18n": {
+            "localized": true
+        }
+    },
+    "attributes": {
+        "Name": {
+            "pluginOptions": {
+                "i18n": {
+                    "localized": true
+                }
+            },
+            "type": "string",
+            "default": "Name"
+        },
+        "Age": {
+            "pluginOptions": {
+                "i18n": {
+                    "localized": true
+                }
+            },
+            "type": "integer",
+            "default": 3
+        },
+        "dob": {
+            "pluginOptions": {
+                "i18n": {
+                    "localized": true
+                }
+            },
+            "type": "date",
+            "default": "2025-01-14"
+        },
+        "AttendingNursury": {
+            "pluginOptions": {
+                "i18n": {
+                    "localized": true
+                }
+            },
+            "type": "boolean",
+            "default": true
+        },
+        "Gender": {
+            "pluginOptions": {
+                "i18n": {
+                    "localized": true
+                }
+            },
+            "type": "string",
+            "default": "Male"
+        },
+        "myMilestones": {
+            "type": "relation",
+            "relation": "manyToMany",
+            "target": "api::milestone.milestone",
+            "mappedBy": "kid"
+        },
+        "myBadges": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::badge.badge",
+            "mappedBy": "kid"
+        },
+        "myParent": {
+            "type": "relation",
+            "relation": "manyToMany",
+            "target": "plugin::users-permissions.user",
+            "inversedBy": "myKids"
+        },
+        "myActivities": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::activity.activity",
+            "mappedBy": "kid"
+        },
+        "myRescheduledActivities": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::rescheduled-event.rescheduled-event",
+            "mappedBy": "myKid"
+        },
+        "kidDP": {
+            "type": "media",
+            "multiple": false,
+            "required": false,
+            "allowedTypes": [
+                "images",
+                "files",
+                "videos",
+                "audios"
+            ],
+            "pluginOptions": {
+                "i18n": {
+                    "localized": true
+                }
+            }
+        },
+        "additionalField": {
+            "pluginOptions": {
+                "i18n": {
+                    "localized": true
+                }
+            },
+            "type": "richtext",
+            "default": "additionalField"
+        }
+    }
+}

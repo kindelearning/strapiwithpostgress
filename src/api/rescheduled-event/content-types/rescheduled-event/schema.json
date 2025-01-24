@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rescheduled_events",
+  "info": {
+    "singularName": "rescheduled-event",
+    "pluralName": "rescheduled-events",
+    "displayName": "RescheduledEvent",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "newDate": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "date",
+      "default": "2025-01-14"
+    },
+    "myKid": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::kid.kid",
+      "inversedBy": "myRescheduledActivities"
+    },
+    "myActivity": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::activity.activity",
+      "inversedBy": "rescheduled_event"
+    },
+    "additionalField": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "richtext",
+      "default": "additionalField"
+    }
+  }
+}
